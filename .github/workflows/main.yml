@@ -20,8 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build Docker Image
-        run: docker build -t my-app .
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag my-app:$(date +%s)
 
   Test:
     runs-on: ubuntu-latest
